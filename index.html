@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tic Tac Toe</title>
+  </head>
+  <body>
+    <main class="main">
+      <h1 class="main__title">Tic Tac Toe</h1>
+      <button class="button main__start">Start Game</button>
+
+      <div class="overlay"></div>
+      <form class="form" action="#">
+        <label for="player-1" class="label">Player 1</label>
+        <input class="input form__player--1" id="player-1" type="text" />
+
+        <label for="player-2" class="label">Player 2</label>
+        <input class="input form__player--2" id="player-2" type="text" />
+
+        <button class="button form__submit">Submit</button>
+      </form>
+
+      <section class="board">
+        <div class="cell board__1">X</div>
+        <div class="cell board__2">X</div>
+        <div class="cell board__3">O</div>
+        <div class="cell board__4">O</div>
+        <div class="cell board__5">O</div>
+        <div class="cell board__6">O</div>
+        <div class="cell board__7">O</div>
+        <div class="cell board__8">X</div>
+        <div class="cell board__9">X</div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__description">Copyright © 2022 Renato Probst</p>
+      <a class="footer__github" target="_blank" href="https://github.com/Prox2005/Tic-Tac-Toe"
+        ><img class="footer__img" src="./github.ico"
+      /></a>
+    </footer>
+  </body>
+</html>
