@@ -51,7 +51,7 @@ body {
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  visibility: hidden;
+  display: none;
 }
 
 .form {
@@ -68,7 +68,7 @@ body {
   height: 300px;
   padding: 20px 0;
   background-color: #141010;
-  visibility: hidden;
+  display: none;
 }
 .form__submit {
   font-size: 1.2rem;
