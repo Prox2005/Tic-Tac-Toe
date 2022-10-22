@@ -1,11 +1,9 @@
 "use strict";
 
 class Player {
-  constructor(name) {
+  constructor(name, symbol) {
     this.name = name;
-  }
-  addName() {
-    console.log("wil add name to the interface");
+    this.symbol = symbol;
   }
 }
 
@@ -20,11 +18,17 @@ class UI {
   getData() {
     const form = document.querySelector(".form");
     const inputs = document.querySelectorAll(".input");
-    const player1 = inputs[0].value;
-    const player2 = inputs[1].value;
+    const playerName1 = inputs[0].value;
+    const playerName2 = inputs[1].value;
+    const symbol1 = document.querySelector(".select-1").value;
+    const symbol2 = document.querySelector(".select-2").value;
+
+    const player1 = new Player(playerName1, symbol1);
+    const player2 = new Player(playerName2, symbol2);
+
     this.form("hidden");
-    form.reset();
     this.renderBoard(player1, player2);
+    form.reset();
   }
 
   renderBoard(player1, player2) {
@@ -32,16 +36,34 @@ class UI {
     const h1 = document.querySelector(".main__title");
     const start = document.querySelector(".main__start");
     board.style.display = "grid";
-    h1.textContent = `${player1} vs ${player2}`;
+    h1.textContent = `${player1.name} vs ${player2.name}`;
     start.remove();
+
+    new Game().markSpot(player1, player2);
   }
 }
 
 class Game {
-  constructor() {}
+  constructor() {
+    this.gameBoard = [];
+    // "X", "X", "O", "X", "O", "X", "X", "O", "X"
+    this.activePlayer = 1;
+  }
 
-  markSpot() {
-    console.log("will allow players to add marks to a specific spot");
+  markSpot(player1, player2) {
+    const cells = document.querySelectorAll(".cell");
+    let activePlayer = 2;
+    cells.forEach((cell) => {
+      cell.addEventListener("click", function () {
+        if (activePlayer === 1) {
+          cell.textContent = player2.symbol;
+          activePlayer = 2;
+        } else if (activePlayer === 2) {
+          cell.textContent = player1.symbol;
+          activePlayer = 1;
+        }
+      });
+    });
   }
 
   checkWinner() {
@@ -56,5 +78,6 @@ startGame.addEventListener("click", function () {
 
 const submit = document.querySelector(".form__submit");
 submit.addEventListener("click", function (e) {
+  e.preventDefault();
   new UI().getData();
 });

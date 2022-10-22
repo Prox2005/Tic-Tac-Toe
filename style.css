@@ -91,7 +91,11 @@ body {
 }
 
 .cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 2px solid #c3195d;
+  font-size: 3rem;
 }
 
 .footer {

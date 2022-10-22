@@ -20,26 +20,34 @@
       <h1 class="main__title">Tic Tac Toe</h1>
       <button class="button main__start">Start Game</button>
 
-      <form class="form" novalidate>
+      <form class="form">
         <label for="player-1" class="label">Player 1</label>
-        <input class="input form__player--1" id="player-1" type="text" name="player-1" required />
+        <input class="input form__player--1" id="player-1" type="text" name="player-1" />
+        <select name="select-1" class="select-1">
+          <option value="x" class="option" selected>X</option>
+          <option value="o" class="option">O</option>
+        </select>
 
         <label for="player-2" class="label">Player 2</label>
-        <input class="input form__player--2" id="player-2" type="text" name="player-2" required />
+        <input class="input form__player--2" id="player-2" type="text" name="player-2" />
+        <select name="select-2" class="select-2">
+          <option value="x" class="option">X</option>
+          <option value="o" class="option" selected>O</option>
+        </select>
 
-        <button class="button form__submit">Submit</button>
+        <button type="submit" class="button form__submit">Submit</button>
       </form>
 
       <section class="board">
-        <div class="cell board__1">X</div>
-        <div class="cell board__2">X</div>
-        <div class="cell board__3">O</div>
-        <div class="cell board__4">O</div>
-        <div class="cell board__5">O</div>
-        <div class="cell board__6">O</div>
-        <div class="cell board__7">O</div>
-        <div class="cell board__8">X</div>
-        <div class="cell board__9">X</div>
+        <div class="cell board__0"></div>
+        <div class="cell board__1"></div>
+        <div class="cell board__2"></div>
+        <div class="cell board__3"></div>
+        <div class="cell board__4"></div>
+        <div class="cell board__5"></div>
+        <div class="cell board__6"></div>
+        <div class="cell board__7"></div>
+        <div class="cell board__8"></div>
       </section>
     </main>
 
